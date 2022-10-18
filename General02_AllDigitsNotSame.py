@@ -9,6 +9,8 @@
 
 
 def not_same_digits(number):
+    if number <= 0:
+        return -1
     while number > 0:
         last_digit = number % 10
         number2 = number
@@ -24,7 +26,7 @@ def main():
     number = int(input("Input your number: "))
 
     result = not_same_digits(number)
-    if number < 0:
+    if result == -1:
         msg = f"Enter a natural number."
     else:
         msg = (f"All digits of the number are different." if result

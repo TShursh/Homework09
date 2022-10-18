@@ -9,11 +9,12 @@
 
 
 def same_digits(number):
+    if number <= 0:
+        return -1
     while number > 9:
         if number % 10 != number // 10 % 10:
             return False
-        else:
-            number = number // 10
+        number = number // 10
     return True
 
 
@@ -21,7 +22,7 @@ def main():
     number = int(input("Input your number: "))
 
     result = same_digits(number)
-    if number <= 0:
+    if result == -1:
         msg = f"Enter a natural number."
     else:
         msg = (f"All digits of the number are the same." if result

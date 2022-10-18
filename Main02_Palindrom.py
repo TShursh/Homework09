@@ -8,6 +8,8 @@
 # Date: 17.10.2022
 
 def palindrom(number):
+    if number <= 0:
+        return -1
     ls = []
     while number > 0:
         last_digit = number % 10
@@ -27,7 +29,7 @@ def main():
 
     result = palindrom(number)
 
-    if number <= 0:
+    if result == -1:
         msg = f"Enter a natural number."
     else:
         msg = (f"Your number is a palindrome." if result

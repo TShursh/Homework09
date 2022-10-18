@@ -8,6 +8,8 @@
 # Date: 16.10.2022
 
 def number_of_occurrences(search_number, number):
+    if number <= 0:
+        return -1
     count = 0
     while number > 0:
         if search_number == number % 10:
@@ -23,7 +25,7 @@ def main():
 
     result = number_of_occurrences(search_number, number)
 
-    if number <= 0:
+    if result == -1:
         msg = f"Enter a natural number."
     else:
         msg = f"The number {search_number} occurs {result} times in the number {number}."
