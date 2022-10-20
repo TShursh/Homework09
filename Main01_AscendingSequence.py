@@ -9,7 +9,7 @@
 
 
 def ascending_sequence(number):
-    while number > 0:
+    while number > 10:
         if number % 10 <= number // 10 % 10:
             return False
         number //= 10
@@ -17,7 +17,7 @@ def ascending_sequence(number):
 
 
 def descending_sequence(number):
-    while number > 0:
+    while number > 10:
         if number % 10 >= number // 10 % 10:
             return False
         number //= 10
