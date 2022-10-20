@@ -9,24 +9,32 @@
 
 
 def ascending_sequence(number):
-    if number <= 0:
-        return -1
     while number > 0:
         if number % 10 <= number // 10 % 10:
             return False
-        number = number // 10
+        number //= 10
+    return True
+
+
+def descending_sequence(number):
+    while number > 0:
+        if number % 10 >= number // 10 % 10:
+            return False
+        number //= 10
     return True
 
 
 def main():
     number = int(input("Input your number: "))
 
-    result = ascending_sequence(number)
-    if result == -1:
+    if number < 0:
         msg = f"Enter a natural number."
+    elif ascending_sequence(number):
+        msg = f"The digits of a number have an ascending sequence."
+    elif descending_sequence(number):
+        msg = f"The digits of a number have an descending sequence."
     else:
-        msg = (f"The digits of a number have an ascending sequence." if result
-               else f"The digits of the number don't have an ascending sequence.")
+        msg = f"The numbers do not form a sequence."
 
     print(msg)
 
